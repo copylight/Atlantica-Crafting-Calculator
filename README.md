@@ -44,7 +44,7 @@ npm run dev
 
 ## ข้อมูลคราฟ
 
-โหลดอัตโนมัติจาก [items.yml](https://github.com/jana4u/atlantica_online_craft_calculator/blob/master/data/items.yml) (repo เดียวกับ [craftcalculator.jana4u.net](https://craftcalculator.jana4u.net/)) ครอบคลุมทุกสายสกิลและไอเทมคราฟได้ พร้อมวัตถุดิบ · แคชใน LocalStorage
+โหลดอัตโนมัติจากชุดข้อมูลบนเว็บไซต์ [craftcalculator.jana4u.net](https://craftcalculator.jana4u.net/) (ไฟล์รายการไอเทมและข้อมูลคราฟภายในเว็บไซต์) ครอบคลุมทุกสายสกิลและไอเทมคราฟได้ พร้อมวัตถุดิบ · แคชใน LocalStorage
 
 สูตร EXP ต่อชิ้น (ตามต้นฉบับ): `floor(workload / 50) / batch_size`
 

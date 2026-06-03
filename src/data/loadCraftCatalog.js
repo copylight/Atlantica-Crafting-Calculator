@@ -3,7 +3,8 @@ import { parseItemsYaml } from './parseItemsYaml.js'
 import { expPerBatchFromWorkload, expPerItemFromWorkload } from './craftXp.js'
 
 export const ITEMS_YAML_URL =
-  'https://raw.githubusercontent.com/jana4u/atlantica_online_craft_calculator/master/data/items.yml'
+  // Primary public-facing source site (uses the jana4u dataset)
+  'https://craftcalculator.jana4u.net/data/items.yml'
 
 const CACHE_KEY = 'atlantica-craft-catalog-cache-v1'
 
@@ -115,7 +116,7 @@ export function transformItemsMap(itemsMap) {
   const craftableCount = categories.reduce((n, c) => n + c.items.length, 0)
 
   return {
-    source: 'jana4u/atlantica_online_craft_calculator',
+    source: 'craftcalculator.jana4u.net',
     sourceUrl: 'https://craftcalculator.jana4u.net/',
     loadedAt: new Date().toISOString(),
     craftableCount,

@@ -76,7 +76,7 @@ git push origin main
 | ไม่มีเมนู Pages | repo ยังเป็น Private → เปลี่ยนเป็น Public หรือใช้ Vercel/Netlify |
 | Workflow แดงที่ `npm ci` | รัน `npm install` แล้ว commit `package-lock.json` |
 | หน้าเว็บขาว / 404 | เปิด URL ให้มี `/Atlantica-Crafting-Calculator/` ตามท้าย |
-| โหลดข้อมูลคราฟไม่ได้ | ต้องมีเน็ต (ดึงจาก GitHub jana4u) — ปกติใช้ได้บน Pages |
+| โหลดข้อมูลคราฟไม่ได้ | ต้องมีเน็ต (ดึงจาก craftcalculator.jana4u.net) — ปกติใช้ได้บน Pages |
 
 ---
 

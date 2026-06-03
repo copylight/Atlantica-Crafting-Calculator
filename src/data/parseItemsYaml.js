@@ -1,5 +1,5 @@
 /**
- * Minimal parser for jana4u items.yml (top-level "Item Name": blocks).
+ * Minimal parser for items.yml used by craftcalculator.jana4u.net (top-level "Item Name": blocks).
  * Avoids a YAML dependency at runtime.
  */
 export function parseItemsYaml(text) {

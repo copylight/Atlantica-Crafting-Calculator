@@ -202,16 +202,7 @@ export default function App() {
         {catalogLoading && (
           <div className="panel mb-6 text-center py-10">
             <p className="text-neon font-display animate-pulse">กำลังโหลดข้อมูลคราฟ...</p>
-            <p className="text-sm text-zinc-500 mt-2">ดึงจาก GitHub (jana4u) · ครั้งแรกอาจใช้เวลาสักครู่</p>
-          </div>
-        )}
-
-        {catalogError && (
-          <div className="alert-error mb-6" role="alert">
-            <p>{catalogError}</p>
-            <button type="button" className="btn btn-secondary mt-3" onClick={() => fetchCatalog(true)}>
-              ลองใหม่
-            </button>
+            <p className="text-sm text-zinc-500 mt-2">ดึงจาก craftcalculator.jana4u.net · ครั้งแรกอาจใช้เวลาสักครู่</p>
           </div>
         )}
 
