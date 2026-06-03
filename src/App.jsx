@@ -8,6 +8,7 @@ import {
   getCraftCatalog,
   loadCraftCatalog,
 } from './data/loadCraftCatalog.js'
+import { getCumulativeExp } from './data/expTable.js'
 import {
   calculateCraftNeeded,
   parseNonNegativeInt,
@@ -107,7 +108,17 @@ export default function App() {
     const levelCheck = parseNonNegativeInt(form.currentLevel, 'เลเวลสกิลปัจจุบัน')
     if (!levelCheck.ok) return { result: null, error: levelCheck.message }
 
-    const expCheck = parseNonNegativeInt(form.currentExp, 'EXP คราฟปัจจุบัน')
+    // Accept either "EXP within level" (recommended) or a cumulative total.
+    // If the user entered a number >= cumulative exp for the current level,
+    // treat it as a cumulative total and convert to within-level exp.
+    const rawExp = Number(form.currentExp)
+    let expCheck
+    if (Number.isFinite(rawExp) && rawExp >= getCumulativeExp(levelCheck.value)) {
+      const within = rawExp - getCumulativeExp(levelCheck.value)
+      expCheck = { ok: true, value: within }
+    } else {
+      expCheck = parseNonNegativeInt(form.currentExp, 'EXP คราฟปัจจุบัน')
+    }
     if (!expCheck.ok) return { result: null, error: expCheck.message }
 
     const targetCheck = parseNonNegativeInt(form.targetLevel, 'เลเวลเป้าหมาย')
