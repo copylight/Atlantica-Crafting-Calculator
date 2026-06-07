@@ -71,7 +71,8 @@ export function calculateCraftNeeded({
     }
   }
 
-  const currentTotal = getCumulativeExp(currentLevel) + currentExp
+  /**const currentTotal = getCumulativeExp(currentLevel) + currentExp**/
+  const currentTotal = currentExp > 0 ? currentExp : getCumulativeExp(currentLevel)
   const targetTotal = getCumulativeExp(targetLevel)
   const expNeeded = targetTotal - currentTotal
 
