@@ -71,7 +71,7 @@ export function calculateCraftNeeded({
     }
   }
 
-  /**const currentTotal = getCumulativeExp(currentLevel) + currentExp**/
+  /**const currentTotal = getCumulativeExp(currentLevel) + currentExp สูตรเดิม**/
   const currentTotal = currentExp > 0 ? currentExp : getCumulativeExp(currentLevel)
   const targetTotal = getCumulativeExp(targetLevel)
   const expNeeded = targetTotal - currentTotal
@@ -87,7 +87,8 @@ export function calculateCraftNeeded({
   const safeBatch = Math.max(1, batchSize)
   /** จำนวนคราฟที่ต้องทำตามสูตรก่อนหน้า */
   const craftActionsNeeded = Math.ceil(expNeeded / expPerCraft)
-  const itemsProduced = craftActionsNeeded
+  /** const itemsProduced = craftActionsNeeded สูตรเดิม*/
+  const itemsProduced = craftActionsNeeded * safeBatch
   const expPerBatch = expPerCraft * safeBatch
   const expGainedTotal = craftActionsNeeded * expPerCraft
 
